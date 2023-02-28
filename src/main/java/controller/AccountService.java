@@ -4,6 +4,9 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.transaction.Transactional;
+
+import java.util.List;
+
 @ApplicationScoped
 @Transactional
 public class AccountService {
@@ -23,5 +26,22 @@ public class AccountService {
         entityManager.persist(account);
         return account;
     }
+        public List<Account> getAllAccounts() {
+        List<Account> list=entityManager.createQuery("SELECT a FROM Account a", Account.class).getResultList();
+        return list;
+    }
 
-}
+        public Account updateAccount(Account account) {
+        entityManager.merge(account);
+        return account;
+    }
+    public boolean deleteAccount(int id) {
+        Account account = getAccountById(id);
+        if (account != null) {
+            entityManager.remove(account);
+            return true;
+        }
+        return false;
+    }
+
+    }

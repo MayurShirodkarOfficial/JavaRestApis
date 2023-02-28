@@ -8,12 +8,10 @@
         <class>controller.Account</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp:/Users/mayur/Desktop/db;DB_CLOSE_ON_EXIT=FALSE;" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:/Users/mayur/Desktop/db;DB_CLOSE_ON_EXIT=FALSE;" />
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value=""/>
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
-            <property name="javax.persistence.schema-generation.create-source" value="metadata"/>
-            <property name="javax.persistence.schema-generation.create-script-source" value="classpath:init.sql"/>
         </properties>
     </persistence-unit>
 </persistence>
