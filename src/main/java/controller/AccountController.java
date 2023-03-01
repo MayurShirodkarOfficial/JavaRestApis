@@ -14,6 +14,7 @@ public class AccountController {
     @Inject
     private AccountService accountService;
 
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
@@ -60,6 +61,10 @@ public class AccountController {
     }
 
 
-
-
+    @Timed
+    @GET
+    @Path("/test")
+    public String test() {
+        return "Testing the interceptors ";
+    }
 }
